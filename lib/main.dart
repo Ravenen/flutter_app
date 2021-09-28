@@ -105,7 +105,11 @@ class _RandomWordsState extends State<RandomWords> {
             appBar: AppBar(
               title: const Text('Saved Suggestions'),
             ),
-            body: ListView(children: divided),
+            body: divided.isNotEmpty
+                ? ListView(children: divided)
+                : const Center(
+                    child: Text('Saved suggestions list is empty'),
+                  ),
           );
         },
       ),
